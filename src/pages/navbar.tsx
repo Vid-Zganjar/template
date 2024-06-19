@@ -164,7 +164,9 @@ export default function Example() {
                     </DisclosureButton>
                   ))}
                 </div>
-                <div className="border-t border-gray-200 pb-3 pt-4">
+
+                <div className="border-t center pl-20 border-gray-200 pb-3 pt-4">
+                
                   <div className="flex items-center px-4">
                     <div className="flex-shrink-0">
                       <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
@@ -173,13 +175,7 @@ export default function Example() {
                       <div className="text-base font-medium text-gray-800">{user.name}</div>
                       <div className="text-sm font-medium text-gray-500">{user.email}</div>
                     </div>
-                    <button
-                      type="button"
-                      className="relative ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                      <span className="absolute -inset-1.5" />
-                     
-                  
+                  <div className="ml-4 flow-root lg:ml-6">
                   <a href="/kosarica" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -188,8 +184,10 @@ export default function Example() {
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>
+                  </div>
                 
-                    </button>
+                
+                    
                   </div>
                 </div>
               </DisclosurePanel>
