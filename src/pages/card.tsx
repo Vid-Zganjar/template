@@ -17,10 +17,6 @@ import { Fragment, useState } from 'react'
 import {
   Dialog,
   DialogPanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
   Tab,
   TabGroup,
   TabList,
@@ -30,9 +26,7 @@ import {
   TransitionChild,
 } from '@headlessui/react'
 import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
+  
   XMarkIcon as XMarkIconOutline,
 } from '@heroicons/react/24/outline'
 import { CheckIcon, ClockIcon, QuestionMarkCircleIcon, XMarkIcon as XMarkIconMini } from '@heroicons/react/20/solid'
