@@ -165,7 +165,7 @@ export default function Example() {
                   ))}
                 </div>
 
-                <div className="border-t center pl-10 border-gray-200 pb-3 pt-4">
+                <div className="border-t center pl-8 border-gray-200 pb-3 pt-4">
                 
                   <div className="flex items-center px-4">
                     <div className="flex-shrink-0">
