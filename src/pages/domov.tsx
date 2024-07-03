@@ -1,82 +1,81 @@
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-import {
-  ArrowPathIcon,
-
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-
-} from '@heroicons/react/24/outline'
-import { CheckIcon } from '@heroicons/react/20/solid'
-
-
-const features = [
+const item = [
   {
-    name: 'Push to deploy',
-    description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+    name: 'Iphone',
+    role: 'IPHONE',
+    price: '599€',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    rating: '4.2',
+
   },
   {
-    name: 'SSL certificates',
-    description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+    name: 'Iphone',
+    role: 'IPHONE',
+    price: '599€',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    rating: '4.2',
+
   },
   {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+    name: 'Iphone',
+    role: 'IPHONE',
+    price: '599€',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    rating: '4.2',
+
   },
   {
-    name: 'Advanced security',
-    description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+    name: 'Iphone',
+    role: 'IPHONE',
+    price: '599€',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    rating: '4.2',
+
   },
+  {
+    name: 'Iphone',
+    role: 'IPHONE',
+    price: '599€',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    rating: '4.2',
+
+  },
+  {
+    name: 'Iphone',
+    role: 'IPHONE',
+    price: '599€',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+    rating: '4.2',
+
+  },
+  
 ]
-const tiers = [
-  {
-    name: 'Freelancer',
-    id: 'tier-freelancer',
-    href: '#',
-    priceMonthly: '$24',
-    description: 'The essentials to provide your best work for clients.',
-    features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
-    mostPopular: false,
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3 // optional, default to 1.
   },
-  {
-    name: 'Startup',
-    id: 'tier-startup',
-    href: '#',
-    priceMonthly: '$32',
-    description: 'A plan that scales with your rapidly growing business.',
-    features: [
-      '25 products',
-      'Up to 10,000 subscribers',
-      'Advanced analytics',
-      '24-hour support response time',
-      'Marketing automations',
-    ],
-    mostPopular: true,
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
   },
-  {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
-    href: '#',
-    priceMonthly: '$48',
-    description: 'Dedicated support and infrastructure for your company.',
-    features: [
-      'Unlimited products',
-      'Unlimited subscribers',
-      'Advanced analytics',
-      '1-hour, dedicated support response time',
-      'Marketing automations',
-    ],
-    mostPopular: false,
-  },
-]
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
+
 const faqs = [
   {
     id: 1,
@@ -88,9 +87,6 @@ const faqs = [
 ]
 
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Example() {
   return (
@@ -134,235 +130,72 @@ export default function Example() {
                   </a>
                 </div>
               </div>
-              <div className="mt-16 flow-root sm:mt-24">
-                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                  <img
-                    src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-                    alt="App screenshot"
-                    width={2432}
-                    height={1442}
-                    className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-            aria-hidden="true"
-          >
-            <div
-              className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-              style={{
-                clipPath:
-                  'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Logo cloud */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-            <img
-              className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
-              alt="Transistor"
-              width={158}
-              height={48}
-            />
-            <img
-              className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
-              alt="Reform"
-              width={158}
-              height={48}
-            />
-            <img
-              className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
-              alt="Tuple"
-              width={158}
-              height={48}
-            />
-            <img
-              className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-              alt="SavvyCal"
-              width={158}
-              height={48}
-            />
-            <img
-              className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-              src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-              alt="Statamic"
-              width={158}
-              height={48}
-            />
-          </div>
-          <div className="mt-16 flex justify-center">
-            <p className="relative rounded-full px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20">
-              <span className="hidden md:inline">
-                Transistor saves up to $40,000 per year, per employee by working with us.
-              </span>
-              <a href="#" className="font-semibold text-indigo-600">
-                <span className="absolute inset-0" aria-hidden="true" /> Read our case study{' '}
-                <span aria-hidden="true">&rarr;</span>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        {/* Feature section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Everything you need to deploy your app
-            </p>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-              pulvinar et feugiat blandit at. In mi viverra elit nunc.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-              {features.map((feature) => (
-                <div key={feature.name} className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                      <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                    </div>
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">{feature.description}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-
-        {/* Testimonial section */}
-        <div className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
-            <img
-              className="absolute inset-0 h-full w-full object-cover brightness-150 saturate-0"
-              src="https://images.unsplash.com/photo-1601381718415-a05fb0a261f3?ixid=MXwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8ODl8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1216&q=80"
-              alt=""
-            />
-            <div className="absolute inset-0 bg-gray-900/90 mix-blend-multiply" />
-            <div className="absolute -left-80 -top-56 transform-gpu blur-3xl" aria-hidden="true">
-              <div
-                className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-[0.45]"
-                style={{
-                  clipPath:
-                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                }}
-              />
-            </div>
-            <div
-              className="hidden md:absolute md:bottom-16 md:left-[50rem] md:block md:transform-gpu md:blur-3xl"
-              aria-hidden="true"
-            >
-              <div
-                className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-r from-[#ff4694] to-[#776fff] opacity-25"
-                style={{
-                  clipPath:
-                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                }}
-              />
-            </div>
-            <div className="relative mx-auto max-w-2xl lg:mx-0">
-              <img className="h-12 w-auto" src="https://tailwindui.com/img/logos/workcation-logo-white.svg" alt="" />
-              <figure>
-                <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
-                  <p>
-                    “Amet amet eget scelerisque tellus sit neque faucibus non eleifend. Integer eu praesent at a. Ornare
-                    arcu gravida natoque erat et cursus tortor consequat at. Vulputate gravida sociis enim nullam
-                    ultricies habitant malesuada lorem ac.”
-                  </p>
-                </blockquote>
-                <figcaption className="mt-6 text-base text-white">
-                  <div className="font-semibold">Judith Black</div>
-                  <div className="mt-1">CEO of Tuple</div>
-                </figcaption>
-              </figure>
             </div>
           </div>
         </div>
 
+    
         {/* Pricing section */}
-        <div className="py-24 sm:pt-48">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">Pricing</h2>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                Pricing plans for teams of&nbsp;all&nbsp;sizes
-              </p>
+        <Carousel
+  swipeable={true}
+  draggable={true}
+  showDots={false}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+
+  autoPlaySpeed={1000}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+>
+    {item.map((item) => (
+      <div key={item.name} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <a href="#">
+        <img className="p-8 rounded-t-lg" src={item.imageUrl} alt="product image" />
+    </a>
+    <div className="px-5 pb-5">
+        <a href="#">
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.role}</h5>
+        </a>
+        <div className="flex items-center mt-2.5 mb-2">
+            <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg className="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
             </div>
-            <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-              Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas
-              in. Explicabo id ut laborum.
-            </p>
-            <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-              {tiers.map((tier, tierIdx) => (
-                <div
-                  key={tier.id}
-                  className={classNames(
-                    tier.mostPopular ? 'lg:z-10 lg:rounded-b-none' : 'lg:mt-8',
-                    tierIdx === 0 ? 'lg:rounded-r-none' : '',
-                    tierIdx === tiers.length - 1 ? 'lg:rounded-l-none' : '',
-                    'flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 ring-gray-200 xl:p-10',
-                  )}
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-x-4">
-                      <h3
-                        id={tier.id}
-                        className={classNames(
-                          tier.mostPopular ? 'text-indigo-600' : 'text-gray-900',
-                          'text-lg font-semibold leading-8',
-                        )}
-                      >
-                        {tier.name}
-                      </h3>
-                      {tier.mostPopular ? (
-                        <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-indigo-600">
-                          Most popular
-                        </p>
-                      ) : null}
-                    </div>
-                    <p className="mt-4 text-sm leading-6 text-gray-600">{tier.description}</p>
-                    <p className="mt-6 flex items-baseline gap-x-1">
-                      <span className="text-4xl font-bold tracking-tight text-gray-900">{tier.priceMonthly}</span>
-                      <span className="text-sm font-semibold leading-6 text-gray-600">/month</span>
-                    </p>
-                    <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
-                      {tier.features.map((feature) => (
-                        <li key={feature} className="flex gap-x-3">
-                          <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <a
-                    href={tier.href}
-                    aria-describedby={tier.id}
-                    className={classNames(
-                      tier.mostPopular
-                        ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500'
-                        : 'text-indigo-600 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300',
-                      'mt-8 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600',
-                    )}
-                  >
-                    Buy plan
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
+            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-4 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">{item.rating}</span>
         </div>
+        <div className="p-2 md:flex items-center justify-between">
+            <span className=" text-4xl md:text-3xl font-bold text-gray-900 dark:text-white">{item.price}</span>
+            <button type="button" className="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+<svg className="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+<path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+</svg>
+Dodaj v košarico
+</button>
+        </div>
+    </div>
+</div>
+))}
+</Carousel>
 
         {/* FAQs */}
         <div className="mx-auto max-w-2xl divide-y divide-gray-900/10 px-6 pb-8 sm:pb-24 sm:pt-12 lg:max-w-7xl lg:px-8 lg:pb-32">

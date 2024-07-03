@@ -20,10 +20,9 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Domov', href: '/', current: true },
-  { name: 'O nas', href: '/about', current: false },
   { name: 'Trgovina', href: '/trgovina', current: false },
-  { name: 'Novice', href: '/novice', current: false },
+  { name: 'O nas', href: '/about', current: false },
+  { name: 'Kontaktiraj nas', href: '/novice', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -36,6 +35,13 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example() {
+  const currentPath = window.location.pathname
+
+  const updatedNavigation = navigation.map(item => ({
+    ...item,
+    current: item.href === currentPath,
+  }))
+
   return (
     <>
       <div className="min-h-full">
@@ -46,23 +52,23 @@ export default function Example() {
                 <div className="flex h-16 justify-between">
                   <div className="flex">
                     <div className="flex flex-shrink-0 items-center">
-                    <a href="/">
-                      <img
-                        className="block h-8 w-auto lg:hidden"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company"
-                      />
+                      <a href="/">
+                        <img
+                          className="block h-8 w-auto lg:hidden"
+                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                          alt="Your Company"
+                        />
                       </a>
                       <a href="/">
-                      <img
-                        className="hidden h-8 w-auto lg:block"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company"
-                      />
+                        <img
+                          className="hidden h-8 w-auto lg:block"
+                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                          alt="Your Company"
+                        />
                       </a>
                     </div>
                     <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                      {navigation.map((item) => (
+                      {updatedNavigation.map((item) => (
                         <a
                           key={item.name}
                           href={item.href}
@@ -76,22 +82,20 @@ export default function Example() {
                         >
                           {item.name}
                         </a>
-                       
                       ))}
-                       
                     </div>
                   </div>
                   <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                  <div className="ml-4 flow-root lg:ml-6">
-                  <a href="/kosarica" className="group -m-2 flex items-center p-2">
-                    <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-                    <span className="sr-only">items in cart, view bag</span>
-                  </a>
-                </div>
+                    <div className="ml-4 flow-root lg:ml-6">
+                      <a href="/kosarica" className="group -m-2 flex items-center p-2">
+                        <ShoppingBagIcon
+                          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                        <span className="sr-only">items in cart, view bag</span>
+                      </a>
+                    </div>
 
                     {/* Profile dropdown */}
                     <Menu as="div" className="relative ml-3">
@@ -113,11 +117,11 @@ export default function Example() {
                         <MenuItems className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                           {userNavigation.map((item) => (
                             <MenuItem key={item.name}>
-                              {({ focus }) => (
+                              {({ active }) => (
                                 <a
                                   href={item.href}
                                   className={classNames(
-                                    focus ? 'bg-gray-100' : '',
+                                    active ? 'bg-gray-100' : '',
                                     'block px-4 py-2 text-sm text-gray-700',
                                   )}
                                 >
@@ -147,7 +151,7 @@ export default function Example() {
 
               <DisclosurePanel className="sm:hidden">
                 <div className="space-y-1 pb-3 pt-2">
-                  {navigation.map((item) => (
+                  {updatedNavigation.map((item) => (
                     <DisclosureButton
                       key={item.name}
                       as="a"
@@ -166,7 +170,6 @@ export default function Example() {
                 </div>
 
                 <div className="border-t center pl-8 border-gray-200 pb-3 pt-4">
-                
                   <div className="flex items-center px-4">
                     <div className="flex-shrink-0">
                       <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
@@ -175,27 +178,22 @@ export default function Example() {
                       <div className="text-base font-medium text-gray-800">{user.name}</div>
                       <div className="text-sm font-medium text-gray-500">{user.email}</div>
                     </div>
-                  <div className="ml-4 flow-root lg:ml-6">
-                  <a href="/kosarica" className="group -m-2 flex items-center p-2">
-                    <ShoppingBagIcon
-                      className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-                    <span className="sr-only">items in cart, view bag</span>
-                  </a>
-                  </div>
-                
-                
-                    
+                    <div className="ml-4 flow-root lg:ml-6">
+                      <a href="/kosarica" className="group -m-2 flex items-center p-2">
+                        <ShoppingBagIcon
+                          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                          aria-hidden="true"
+                        />
+                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                        <span className="sr-only">items in cart, view bag</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </DisclosurePanel>
             </>
           )}
         </Disclosure>
-
-       
       </div>
     </>
   )
