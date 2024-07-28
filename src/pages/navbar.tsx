@@ -9,6 +9,8 @@ import {
   Transition,
 } from '@headlessui/react'
 
+import  logo from "./slike/crnLogo.png"
+
 import { ShoppingBagIcon } from '@heroicons/react/24/outline'
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -54,15 +56,15 @@ export default function Example() {
                     <div className="flex flex-shrink-0 items-center">
                       <a href="/">
                         <img
-                          className="block h-8 w-auto lg:hidden"
-                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                          className="block h-16 w-auto lg:hidden"
+                          src={logo}
                           alt="Your Company"
                         />
                       </a>
                       <a href="/">
                         <img
-                          className="hidden h-8 w-auto lg:block"
-                          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                          className="hidden h-16 w-auto lg:block"
+                          src={logo}
                           alt="Your Company"
                         />
                       </a>
